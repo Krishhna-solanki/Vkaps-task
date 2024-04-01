@@ -1,0 +1,668 @@
+/*.................................................................................................. globel css */
+
+
+* {
+    margin: 0;
+    padding: 0%;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+:root {
+    --bg-purple: #816DB1;
+    --bg-blue: #223772;
+    --txt-black: #202223;
+    --culr-white: #fff;
+    --light-grey: #cfdcffa2;
+    --txt-ligth-grey: #6D6B6B;
+}
+
+.flex-between {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.flex-arround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container-fluid {
+    max-width: 1500px;
+    padding: 0px 10px;
+    margin: 0% auto;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0% auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+section{
+    overflow: hidden;
+}
+
+/* ........................................................................................................font instal */
+
+@font-face {
+    font-family: roboto-regular;
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: roboto-bold;
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: inter;
+    src: url("../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+    font-family: roboto-medium;
+    src: url('../fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: Poppins-semibold;
+    src: url('../fonts/Poppins/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Poppins-regular;
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins-medium;
+    src: url('../fonts/Poppins/Poppins-Medium.ttf');
+}
+
+
+/* .....................................................................................header navigation bar  */
+
+nav li a {
+    font-family: roboto-regular, sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--txt-black);
+    text-transform: capitalize;
+    position: relative;
+    transition: 0.4s;
+}
+
+a.active::after,
+nav li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8%;
+    left: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: var(--txt-black);
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+a.active::after,
+nav li a:hover::after {
+    width: 100%;
+}
+
+nav li {
+    margin-right: 40px;
+}
+
+.left-side,
+.right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    margin-left: 80px;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.tel-slogen {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tel-slogen span {
+    font-family: roboto-regular, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--txt-black);
+    text-transform: capitalize;
+}
+
+.tel-num {
+    font-family: roboto-bold, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 5px;
+}
+
+.navigation-bar {
+    background-color: var(--culr-white);
+    padding: 31px 6px 30px 25px;
+    transition: 0.4s;
+}
+
+.logo {
+    max-width: 220px;
+    position: relative;
+    z-index: 6;
+}
+
+.humburger {
+    width: 30px;
+    overflow: hidden;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.humburger-line {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    transition: 0.4s;
+}
+
+.humburger.active .humburger-line1 {
+    transform: translateY(8px) rotate(45deg);
+    width: 25px;
+}
+
+.humburger.active .humburger-line2 {
+    transform: translateX(-35px);
+}
+
+.humburger.active .humburger-line3 {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 25px;
+
+}
+
+.humburger:hover .humburger-line2 {
+    width: 20px;
+}
+
+.navigation-bar.sticky{
+    position: fixed;
+    width: calc(100% - 10px);
+    left: 0;
+    top: 0%;
+    padding: 20px 10px;
+    z-index: 2;
+
+}
+
+/* .................................................................header brand slider */
+
+.brand-item {
+    background-color: var(--bg-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 10px;
+    min-height: 70px;
+}
+
+
+.brand-slogen {
+    font-size: 13px;
+    line-height: 19.5px;
+    font-family: inter, sans-serif;
+    font-weight: 400;
+    color: var(--culr-white);
+}
+
+.brand-slider {
+    background-color: var(--bg-purple);
+    overflow: hidden;
+    width: 100%;
+}
+
+.brand-img {
+    max-width: 50px;
+}
+
+.slick-initialized .slick-slide {
+    display: flex !important;
+}
+
+/* ..........................................................hero section */
+
+.hero {
+    background-color: var(--bg-blue);
+}
+
+.hero-img {
+    max-width: 450px;
+    overflow: hidden;
+    border: 8px solid #CFDCFF;
+    border-radius: 50%;
+}
+
+.hero-img img {
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.hero-img:hover img {
+    transform: scale(1.1);
+}
+
+.hero-up-title {
+    font-size: 40px;
+    text-transform: capitalize;
+    color: var(--culr-white);
+    font-family: inter, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: var(--culr-white);
+    font-family: inter, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-left-side {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.hero-btn {
+    color: var(--bg-blue);
+    font-size: 38px;
+    font-family: roboto-bold, sans-serif;
+    text-transform: uppercase;
+    padding: 20px 50px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    box-shadow: 2px 5px 0px #816DB1;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.hero-btn span {
+    font-family: roboto-regular, sans-serif;
+}
+
+.hero-btn:hover {
+    border: 1px solid #223772;
+    background: #816DB1;
+    color: #fff;
+    box-shadow: none;
+}
+
+.hero-content {
+    padding: 40px 20px;
+}
+
+/*...................................................... service section  */
+
+.service-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: 0.4s;
+    margin: 0px 20px;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.service-img {
+    max-width: 45px;
+}
+
+.service-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    font-family: inter, sans-serif;
+}
+
+.service-slider .slick-track {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 35px 0;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: var(--light-grey);
+}
+
+/* ........................................................about section */
+
+.title {
+    font-family: Poppins-semibold, sans-serif;
+    font-size: 34px;
+    text-transform: capitalize;
+    color: var(--bg-blue);
+    position: relative;
+}
+
+.title::after {
+    content: url('../images/dog-foot-icon.svg');
+    position: absolute;
+    left: -7%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    transition: 0.4s;
+}
+
+.bold-description {
+    font-family: Poppins-regular, sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.description {
+    font-family: Poppins-redular, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--txt-ligth-grey);
+    margin-top: 20px;
+}
+
+.btn {
+    font-family: Poppins-medium, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--culr-white);
+    padding: 6px 25px;
+    background-color: var(--bg-blue);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: 0.4s;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 1px solid var(--bg-blue);
+    color: var(--bg-blue);
+}
+
+.about-img {
+    max-width: 470px;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+/* video section */
+
+.video{
+    background-color: var(--bg-blue);
+}
+
+.video-img{
+    max-width: 580px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.video-content .description{
+    color: var(--culr-white);
+}
+
+.video-content .btn{
+    background-color: #fff;
+    color: #223772;
+}
+
+.video-content{
+    max-width: 580px;
+    overflow: hidden;
+}
+
+.video-img img{
+    transition: 0.4s;
+    border-radius: 16px;
+}
+
+.video-img:hover img{
+    transform: scale(1.1);
+}
+
+/*.............................................................. different section */
+
+.section-img {
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.section-content {
+    max-width: 480px;
+}
+
+/*............................................................... blogs section */
+
+.blogs-title {
+    font-family: Poppins-semibold , sans-serif;
+    font-size: 40px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--bg-blue);
+}
+.blogs-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.blogs-box {
+    max-width: 390px;
+    background-color: var(--light-grey);
+    padding: 10px;
+    border-radius: 4px;
+}
+.blog-name {
+    font-size: 24px;
+    font-family: Poppins-medium , sans-serif;
+    line-height: 37px;
+    color: var(--txt-black);
+    margin: 15px 0;
+
+}
+.blog-date {
+    font-family: Poppins-regular , sans-serif;
+    font-size: 12px;
+    color: var(--bg-blue);
+
+}
+
+
+/* scroll up */
+
+
+.scrollup{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid var(--bg-blue);
+    filter: contrast(5) brightness(3);
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.scrollup:hover{
+    bottom: 30px;
+}
+.scrollup.show{
+    opacity: 1;
+}
+
+.scrollup::before,
+.scrollup::after{
+    content: "";
+    position: absolute;
+    filter: contrast(5) brightness(3);
+    top: -30%;
+    left: 21%;
+    width: 0;
+    height: 0;
+    border: solid var(--bg-blue);
+    border-width: 0 3px 3px 0;
+    padding: 10px;
+    transform: rotate(-135deg);
+}
+
+.scrollup::before{
+    top: -50%;
+}
+
+/*...................................................... footer  */
+
+.foot-icon img{
+    max-width: 20px;
+}
+
+/* .foot-icon img:nth-child(2){
+    margin-top: 10px;
+}
+
+.foot-icon img:nth-child(3){
+    margin-top: 15px;
+} */
+
+.foot-icon{
+    width: 50px;
+    flex-wrap: wrap;
+    gap: 5px;
+    display: flex;
+}
+
+.social-text{
+    font-family: inter , sans-serif;
+    font-weight: 500;
+    font-size: 33px;
+    text-align: center;
+}
+
+.social-icon img{
+    max-width: 35px;
+    transition: 0.4s;
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.social-icon img:hover{
+    filter: contrast(5) brightness(3);
+}
+
+
+.footer-content{
+    background-color: var(--bg-purple);
+    padding: 50px 0;
+}
+
+.foter-link-col {
+    max-width: 380px;
+}
+.footer-title {
+    font-family: Poppins-semibold , sans-serif;
+    font-size: 19px;
+    text-transform: uppercase;
+    color: var(--culr-white);
+    margin-bottom: 20px;
+}
+
+.foter-link-col li a{
+    font-family: roboto-medium , sans-serif;
+    font-size: 15px;
+    color: var(--culr-white);
+    text-transform: capitalize;
+    transition: 0.4s;
+}
+
+.foter-link-col li a:hover{
+    color: #cec9c9;
+}
+
+.foter-link-col li{
+    display: block;
+    margin: 8px 0;
+}
+
+
+.foter-link-col .description{
+    color: var(--culr-white);
+    margin: 0%;
+}
